@@ -15,24 +15,37 @@ int main(void) {
 	setvbuf(stdout, NULL, _IONBF, 0);
 	setvbuf(stderr, NULL, _IONBF, 0);
 
-	int loop;
+	int loop = 1;
 	while (loop > 0) {
 		int pnum, arr[7], i = 0, count = 0, j = 0;
-
 		printf("Please enter a phone number: ");
 		scanf("%d", &pnum);
-		if (pnum == 0)
-			loop = 1;
-		arr[i] = pnum % 10;
-		pnum = pnum / 10;
-		i++;
-		count++;
 
-		for (j = count - 1; j >= 0; j--) {
-			if (j == 3) {
-				printf("-");
+		if (pnum == 0) {
+			printf("Exit...");
+			loop = 0;
+		} else {
+
+			while (pnum != 0) {
+				arr[i] = pnum % 10;
+				pnum = pnum / 10;
+				i++;
+				count++;
 			}
-			printf("%d", arr[j]);
+			if (count < 7 || count > 7) {
+				printf("Invalid Phone Number");
+			} else if (arr[6] == 1 || arr[6] == 0) {
+				printf("Invalid Phone Number");
+			} else {
+				for (j = count - 1; j >= 0; j--) {
+					if (j == 3) {
+						printf("-");
+					}
+					printf("%d", arr[j]);
+				}
+			}
+			printf("\n");
+
 		}
 	}
 	return 0;
