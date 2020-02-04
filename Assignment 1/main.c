@@ -1,37 +1,13 @@
 #include <stdio.h>
 #include "helper.h"
+#include "empManager.h"
+#include "deptManager.h"
+#include "assTable.h"
 
-void main(void){
-  char *deptName;
-  int empCount, empIndex, deptCount;
-  int *empID;
-  int *assTable;
-  //int empIndexCount;
-  //re-reading the assignment, there's only ever one set of actual data input
-  //of employee Id's and departments, so empCount and deptCount can be used
-  //reliably for association table bounds.
-
-
-
-  printf("%s\n", "Please enter the number of employees you would like to add");
-  scanf("%d\n",empCount);
-
-  empTestandAdd(empCount);
-
-  printf("%s\n", "Please enter the number of departments in the company");
-  scanf("%d\n",deptCount);
-
-  deptAddAndTest(deptCount);
-
+int main(){
+  empTestandAdd();
+  deptAddAndTest();
   initilaize2DArray(assTable,deptCount,empCount);
-
-  // void initilaize2DArray(int *array, size_t deptCount, size_t empCount) {
-  //     int row, column;
-  //     for (row = 0; row < deptCount; row++) {
-  //         for (column = 0; column < columnSize; column++) {
-  //             *(array + row * columnSize + column) = -1;
-  //         }
-  //     } I need to use this same logic to define the association table with pointers
-  // }    pointing to the memory adddresses of the dept and emp arrays.
-
+  // addEmployee(assTable, deptCount, empCount);
+ return 0;
 }

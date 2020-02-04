@@ -1,0 +1,25 @@
+  // void initilaize2DArray(int *array, size_t deptCount, size_t empCount) {
+  //     int row, column;
+  //     for (row = 0; row < deptCount; row++) {
+  //         for (column = 0; column < columnSize; column++) {
+  //             *(array + row * columnSize + column) = -1;
+  //         }
+  //     } I need to use this same logic to define the association table with pointers
+  // }    pointing to the memory adddresses of the dept and emp arrays.
+
+  //int empIndexCount;
+  //re-reading the assignment, there's only ever one set of actual data input
+  //of employee Id's and departments, so empCount and deptCount can be used
+  //reliably for association table bounds.
+
+
+
+  // printf("%s\n", "Please enter the number of employees you would like to add");
+  // scanf("%d\n",empCount);
+
+  // int empId[empCount];
+
+   // printf("%s\n", "Please enter the number of departments in the company");
+  // scanf("%d\n",deptCount);
+
+  // char deptName[deptCount];
