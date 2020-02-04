@@ -2,7 +2,9 @@
 #define empManager_h
 
 #include <stdio.h>
+ int empIndexCount =0;
+ int empIdInput, empCount;
 
-void empTestandAdd(int);
+void empTestandAdd();
 
 #endif /* empManager_h */
