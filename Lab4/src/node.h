@@ -1,13 +1,17 @@
-/*
- * node.h
- *
- *  Created on: Feb. 24, 2020
- *      Author: verma
+/*node.h
+ ============================================================================
+ Name        : Lab4.c
+ Author      : Shubam Verma, Kyle Keogan
+ Version     :
+ Copyright   :
+ Description : Lab4 C-Programming CST8234
+ ============================================================================
  */
 
 #ifndef NODE_H_
 #define NODE_H_
-#include <stdio.h>
+
+
 
 /* Add employee struct and Node struct */
 
@@ -33,7 +37,7 @@ void print_list (node_t * head);
 void addToEnd(node_t **head, employee_t *employee);
 
 /*
- Adds a new node to the beginning of thr list
+ Adds a new node to the beginning of the list
  */
 void addToStart(node_t ** head, employee_t *employee);
 
@@ -51,6 +55,17 @@ void removeLast(node_t **head);
  Removes a node by index
  */
 void remove_by_index(node_t ** head, int n);
+
+/*
+ * Takes user input for adding nodes information
+ * returns constructed employee_t node pointer
+ */
+void addEmpFunc(employee_t *emp1, int i);
+
+/*
+ * Provides text prompts and updates for user in sequence.
+ */
+void text(int *counter);
 
 
 #endif /* NODE_H_ */

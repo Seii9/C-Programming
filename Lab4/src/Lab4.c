@@ -1,16 +1,16 @@
-/*
+/*Lab4.c
  ============================================================================
  Name        : Lab4.c
- Author      : Shubam
+ Author      : Shubam Verma, Kyle Keogan
  Version     :
- Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
+ Copyright   :
+ Description : Lab4 C-Programming CST8234
  ============================================================================
  */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+
 #include "node.h"
 
 
@@ -22,84 +22,72 @@ int main(void) {
 	node_t *head = NULL;
 	employee_t *emp1;
 
+	int *counter = (int*)malloc(sizeof(int));
+	*counter = 0;
 	int i = 0;
 
 	/*6. Adding to the end of the list. -----------------------------*/
+	text(counter);
 	for (i = 0; i < 3; i++) {
 		emp1 = (employee_t*) malloc(sizeof(employee_t));
-		printf("Enter details of Employee %d\n", i + 1);
-
-		printf("First Name: ");
-		scanf("%s", emp1->firstName);
-
-		printf("Last Name: ");
-		scanf("%s", emp1->lastName);
-
+		addEmpFunc(emp1,i);
 		addToEnd(&head, emp1);
-
 	}
-	printf("Adding to the end of the list\nList: \n");
+	text(counter);
 	print_list(head);
 
 	/*7. Adding to the Start of the list. -----------------------------*/
+	text(counter);
 	for (i = 0; i < 3; i++) {
 		emp1 = (employee_t*) malloc(sizeof(employee_t));
-		printf("Enter details of Employee %d\n", i + 1);
-
-		printf("First Name: ");
-		scanf("%s", emp1->firstName);
-
-		printf("Last Name: ");
-		scanf("%s", emp1->lastName);
-
+		addEmpFunc(emp1,i);
 		addToStart(&head, emp1);
-
 	}
-	printf("Adding to the Start of the list\nList: \n");
+	text(counter);
 	print_list(head);
 
 	/*8. Delete the first three elements ------------------------------*/
-	printf("\nList: \n");
+	text(counter);
+	print_list(head);
 	for (i = 0; i < 3; i++) {
 		removeFromStart(&head);
 	}
+	text(counter);
 
-	printf("Delete the first three elements\nList: \n");
 	print_list(head);
 
 	/*9. Delete the Last three elements ------------------------------*/
 	for (i = 0; i < 3; i++) {
 		removeLast(&head);
 	}
-	printf("Delete the Last three elements\nList: \n");
+	text(counter);
 	print_list(head);
 
 	/*read 3 new employee information from the user and add them to the
-	end of the list.*/
+	end of the list.---------------------------------------------------*/
+	text(counter);
+
 
 	for (i = 0; i < 3; i++) {
 		emp1 = (employee_t*) malloc(sizeof(employee_t));
-		printf("Enter details of Employee %d\n", i + 1);
-
-		printf("First Name: ");
-		scanf("%s", emp1->firstName);
-
-		printf("Last Name: ");
-		scanf("%s", emp1->lastName);
-
+		addEmpFunc(emp1,i);
 		addToEnd(&head, emp1);
-
 	}
 
+	/*Deleting 1 element at index 1-------------------------------------*/
+
+	text(counter);
 	print_list(head);
 
-	printf("Last:\n");
+	text(counter);
+
 
 	remove_by_index(&head,1);
 
 	print_list(head);
 
-
+	/*Exiting program----------------------------------------------------*/
+	text(counter);
 
 }
 
